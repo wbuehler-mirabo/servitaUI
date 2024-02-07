@@ -1,0 +1,465 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://unpkg.com/alwan/dist/css/alwan.min.css">
+		<script src="https://unpkg.com/alwan/dist/js/alwan.min.js"></script>
+		<link href='https://unpkg.com/css.gg@2.0.0/icons/css/lock-unlock.css' rel='stylesheet'>
+		
+	</head>
+	<body>
+		<style>
+			.break {
+				width: 100% !important;
+				height: 0;
+			}
+			h1 {
+				text-align: left;
+				color: white;
+			}
+			h2 {
+				text-align: center;
+			}
+			#appTitle {
+				display: flex;
+				width: 100%;
+				height: 80px;
+				flex-direction: row;
+				background-color: black;
+				color: white;
+				box-shadow: 0px 5px 14px -7px black;
+				justify-content: center;
+				align-content: center;
+				
+			}
+			body {
+				background-color: #c9c7c7;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				border: 0;
+				font-family: Arial, Helvetica, sans-serif;
+				display: flex;
+				flex-direction: column;
+				align-content: center;
+				justify-content: center;
+			}
+			.appPage {
+				height: fit-content;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				flex-direction: column;
+				transition-duration: 300ms;
+				
+			}
+			.appView {
+				display: flex;
+				flex: 1;
+				height: 100%;
+			}
+			#pControls {
+				height: 100%;
+				visibility: inherit;
+			}
+			.aPageButtons {
+				text-align: center;
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				column-gap: 2%;
+				align-content: center;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			.topRowButtons {
+				width: fit-content;
+				height: fit-content;
+
+			}
+			.aPageTitle {
+				width: 100%;
+
+			}
+			.controlsButtons {
+				justify-self: center;
+				align-self: center;
+
+			}
+			.controlsButtons {
+				font-size:15px;
+				font-family:Arial;
+				width:140px;
+				height:50px;
+				border-width:1px;
+				color:#fff;
+				border-color: #4682B4;
+				font-weight: bold;
+				border-top-left-radius:8px;
+				border-top-right-radius:8px;
+				border-bottom-left-radius:8px;
+				border-bottom-right-radius:8box-px;
+				box-shadow: 0px 10px 14px -7px #276873;
+				text-shadow: 0px 1px 0px #3d768a;
+				background:rgba(74, 74, 74, 1);
+			}
+			.controlsButtons:hover {
+				background: #4682B4;
+				transition-duration: 300ms;
+			}
+			
+			
+			#cancel {
+				background:#b21111 !important;
+				box-shadow: #e33737 !important;
+				text-shadow: none;
+
+			}
+			#cancel:hover {
+				background: #701313 !important;
+				transition-duration: 300ms !important;
+			}
+		
+	
+			#appMenu {
+				position: fixed;
+				bottom: 10px;
+				height: 70px;
+				width: 100%;
+				display: grid;
+			}
+			#barContainer {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-content: center;
+				background-color: black;
+				column-gap: 5%;
+				min-width: 80%;
+				height: 90%;
+				justify-self: center;
+				align-self: center;
+				box-shadow: 0px 10px 14px -7px gray;
+				border-radius: 20px;
+			}
+			.menuButtonContainer {
+				background: black;
+				color: white;
+				border-radius: 20px;
+				justify-self: center;
+				align-self: center;
+			}
+			.menuButtons {
+				background: black;
+				border-radius: 10px;
+				height: 80%;
+				width: 100%;
+				border-style: hidden;
+				border-width: 1px;
+				color: white
+			}
+			.menuButtons:hover {
+				background: #4682B4 !important;
+				transition-duration: 300ms !important;
+			}
+			#imgContainer {
+				width: fit-content;
+				height: fit-content;
+				align-self: center;
+				justify-self: center;
+				margin-right: 5px;
+			}
+			#logo {
+				width: 100%;
+				height: 100%;
+				align-self: center;
+				justify-self: center;
+			}
+			.rgbPage {
+				justify-self: center;
+				align-self: center;
+			}
+
+			#inputForm {
+				display: grid;
+				text-align: right;
+				align-content: center;
+				justify-content: center;
+				height: 200px;
+			
+			}
+			#submitCredentialsContainer {
+				align-self: center;
+				justify-self: center;
+			}
+			#submitCredentials {
+				width: 70px;
+				height: 25px;
+			}
+			input {
+				border-radius: 20px;
+			}
+			.lockerPage {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-content: center;
+			}
+			#l-u-Image {
+				justify-self: center;
+				align-self: center;
+			}
+			#luContainer{
+				justify-self: center;
+				align-self: center;
+			}
+			#luButtonContainer{
+				justify-self: center;
+				align-self: center;
+
+			}
+			
+
+			
+			
+
+
+		</style>
+		<div id="appTitle" >
+			<div id="imgContainer">
+				<img id="logo" src="logoServita.svg" />
+			</div>
+		</div>
+
+		<div class="break" style="min-height: 5%;"></div>
+
+
+		
+			<div id="appView" class="appView">
+				<div id="pControls" class="appPage">
+					<div id="titleControls" class="aPageTitle">
+						<h2>
+							Pour a Drink
+						</h2>
+					</div>
+
+					<div class="break" style="min-height: 10%;"></div>
+					<div id="pourMenu" class="aPageButtons">
+						
+
+						<div id="drink1Container" class="topRowButtons">
+							<label id="d1Label" for="drink1">
+							</label>
+							<button class="controlsButtons" id="drink1">Drink 1</button>
+						</div>
+
+						<div id="drink2Container" class="topRowButtons">
+							<label id="d2Label" for="drink2">
+							</label>
+							<button class="controlsButtons" id="drink2">Drink 2</button>
+						</div>
+
+
+						<div id="drink3Container" class="topRowButtons">
+							<label id="d3Label" for="drink2">	
+							</label>
+							<button class="controlsButtons" id="drink3">Drink 3</button>
+
+						</div>
+						<div class="break" style="min-height: 30px;"></div>
+						<div id="cancelContainer">
+							<button class="controlsButtons" id="cancel">Cancel Pour</button>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="rgbPicker" class="appPage" style="display:none;">
+					<h2>
+						Change LED Color
+					</h2>
+					<div class="rgbPage">
+						<div id="picker">
+
+						</div>
+						
+					</div>
+
+				</div>
+
+				<div id="locker" class="appPage" style="display:none;">
+					<div class="lockerPage">
+						<h2>Lock/Unlock Device</h2>
+						<div class="break" style="min-height: 20px"></div>
+						<div id="luContainer">
+							<p id="luStatus">Status: Unlocked</p>
+						</div>
+						<div class="break" style="min-height: 40px;"></div>
+						<div id="luButtonContainer">
+							<button class="controlsButtons" id="uButton" onclick="unlocked()">Unlock</button>
+							<button class="controlsButtons" id="lButton" onclick="locked()">Lock</button>
+						</div>
+					</div>
+					
+				</div>
+
+				<div id="wifiConfig" class="appPage" style="display:none;">
+					<div class="wifiPage">
+						<h2>Change WiFi Credentials</h2>
+						<div id="inputForm">
+							<div id="sContain">
+								
+								<label for="ssid">Network Name: </label>
+								<input id="ssid" type="text"/>
+								
+							</div>
+							<div class="break" style="min-height: 20px;"></div>
+							<div id="pContain">
+								<label for ="pass">Password: </label>
+								<input id="pass" type="text" />
+							</div>
+							<div class="break" style="min-height: 20px;"></div>
+							<div id="submitCredentialsContainer">
+								<button type="button" class="controlsButtons" id="submitCredentials">Submit</button>
+							
+							</div>
+							
+							
+						</div>
+						
+					</div>
+					
+				</div>
+
+
+			</div>
+			
+
+
+		<div class="break" style="min-height: 5%"></div>
+
+			<div id="appMenu">
+				<div id="barContainer">
+					<div id="main" class="menuButtonContainer">
+						<!-- controls -->
+						<button id="goPour" class="menuButtons"  onclick="menuController(pControls)">Pour Drink</button>
+						
+					</div>
+					<div id="ledControl" class="menuButtonContainer">
+						<button id="goRGB" class="menuButtons" onclick="menuController(rgbPicker)">LED Color</button>
+					</div>
+	
+					<div id="wireless" class="menuButtonContainer">
+						<button id="goWiFi" class="menuButtons" onclick="menuController(wifiConfig)">WiFi Config</button>
+					</div>
+	
+					<div id="deviceLocker" class="menuButtonContainer">
+						<button id="goLock" class="menuButtons" onclick="menuController(locker)">Lock Device</button>
+						
+					</div>
+				</div>
+				
+
+				
+
+
+			</div>
+
+		</div>
+		<!-- BEGIN SCRIPT FOR DRINK MENU !-->
+		<script type="text/javascript">
+			// Element Variables
+			const drink1 = document.getElementById('d1Label');
+			const drink2 = document.getElementById('d2Label');
+			const drink3 = document.getElementById('d3Label');
+			const pControls = document.getElementById('pControls');
+			const rgbPicker = document.getElementById('rgbPicker');
+			const wifiConfig = document.getElementById('wifiConfig');
+			const locker = document.getElementById('locker');
+			const rgbButton = document.getElementById('goRGB')
+			const luStatus = document.getElementById('luStatus');
+			const lButton = document.getElementById('lButton');
+			const uButton = document.getElementById('uButton');
+
+			// lock unlock display functions
+			function locked() {
+				luStatus.innerText = "Status: Locked"
+			}
+			function unlocked() {
+				luStatus.innerText = "Status: Unlocked"
+
+			}
+
+			// RGB Picker Handler
+			const colorPicker = new Alwan('#picker', {
+									id: 'pickContainer',
+									theme: 'dark',
+									toggle: false,
+									popover: false,
+									format: 'rgb',
+								});
+			// Determine Current Page
+			function currentPage() {
+				const menuItems = [
+					pControls,
+					rgbPicker,
+					wifiConfig,
+					locker
+				];
+				for (i=0; i < menuItems.length; i++) {
+					if (menuItems[i].getAttribute('style') == null) {
+						return menuItems[i];
+					}
+				}
+
+			}
+			
+			// App Menu Handler
+			function menuController(selection) {
+				console.log('button clicked')
+				let cPage = currentPage();
+				console.log(cPage)
+				if (cPage == null) {
+					return console.log('something went wrong');
+					console.log()
+				}	
+				if (selection == cPage) {
+					return
+				} else {
+					cPage.setAttribute('style', 'display:none');
+					selection.removeAttribute('style');
+				}
+				
+
+			}
+
+			// Rename drinks
+			function changeDrinkName(drink, name) {
+				let drinkNum;
+				
+				if (drink == 'drink1') {
+					drinkNum = "1"
+					drink = drink1
+				}
+				if (drink == 'drink2') {
+					drinkNum = "2"
+					drink = drink2
+				}
+				if (drink == 'drink3') {
+					drinkNum = "3"
+					drink = drink3
+				}
+
+				drink.innerHTML = name;
+
+				return console.log('Drink ' + drinkNum + ' name changed to: ', name + '.');
+
+
+			}
+
+
+		</script>
+
+	</body>
+</html>
