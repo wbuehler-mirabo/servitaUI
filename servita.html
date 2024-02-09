@@ -3,9 +3,14 @@
 		<link rel="stylesheet" href="https://unpkg.com/alwan/dist/css/alwan.min.css">
 		<script src="https://unpkg.com/alwan/dist/js/alwan.min.js"></script>
 		<link href='https://unpkg.com/css.gg@2.0.0/icons/css/lock-unlock.css' rel='stylesheet'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
 		
 	</head>
 	<body>
+		<script type="text/javascript">
+			document.addEventListener("touchstart", function() {}, true);
+		</script>
 		<style>
 			.break {
 				width: 100% !important;
@@ -97,28 +102,34 @@
 				border-top-left-radius:8px;
 				border-top-right-radius:8px;
 				border-bottom-left-radius:8px;
-				border-bottom-right-radius:8box-px;
+				border-bottom-right-radius: 8px;
 				box-shadow: 0px 10px 14px -7px #276873;
 				text-shadow: 0px 1px 0px #3d768a;
 				background:rgba(74, 74, 74, 1);
+				background-position: center;
+  				transition: background 0.8s;
 			}
-			.controlsButtons:hover {
+			/*
+			.controlsButtons:hover, .controlsButtons:focus, .controlsButtons:active {
 				background: #4682B4;
 				transition-duration: 300ms;
 			}
-			
+			*/
 			
 			#cancel {
-				background:#b21111 !important;
-				box-shadow: #e33737 !important;
+				background:#b21111;
+				box-shadow: #e33737;
 				text-shadow: none;
+				background-position: center;
+  				transition: background 0.8s;
 
 			}
-			#cancel:hover {
-				background: #701313 !important;
-				transition-duration: 300ms !important;
+			/*
+			#cancel:hover, #cancel:focus, #cancel:active {
+				background: #701313;
+				transition-duration: 300ms;
 			}
-		
+		*/
 	
 			#appMenu {
 				position: fixed;
@@ -134,7 +145,7 @@
 				align-content: center;
 				background-color: black;
 				column-gap: 5%;
-				min-width: 80%;
+				min-width: 90%;
 				height: 90%;
 				justify-self: center;
 				align-self: center;
@@ -155,12 +166,16 @@
 				width: 100%;
 				border-style: hidden;
 				border-width: 1px;
-				color: white
+				color: white;
+				background-position: center;
+  				transition: background 0.8s;
 			}
-			.menuButtons:hover {
-				background: #4682B4 !important;
-				transition-duration: 300ms !important;
+			/*
+			.menuButtons:hover, .menuButtons:focus, .menuButtons:active {
+				background: #4682B4;
+				transition-duration: 300ms;
 			}
+			*/
 			#imgContainer {
 				width: fit-content;
 				height: fit-content;
@@ -192,8 +207,9 @@
 				justify-self: center;
 			}
 			#submitCredentials {
-				width: 70px;
-				height: 25px;
+				width: 100px;
+				height: 35px;
+				text-align: center;
 			}
 			input {
 				border-radius: 20px;
@@ -217,10 +233,72 @@
 				align-self: center;
 
 			}
-			
+			@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+				.aPageButtons {
+					column-gap: 5%;
+					row-gap: 5%;
+				}
+			}
+			@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+			@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+			@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+			@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+			@media (min-width:1281px) { /* hi-res laptops and desktops */ }
 
-			
-			
+			@media (hover: hover) {
+				.menuButtons:hover {
+					background: #4682B4 radial-gradient(circle, transparent 1%, #4682B4 1%) center/15000% !important;
+				}
+				.menuButtons:active {
+					background-color: #4682B4;
+					background-size: 100%;
+					transition: background 0s;
+				}
+				
+				.controlsButtons:hover {
+					background: #4682B4 radial-gradient(circle, transparent 1%, #303030 1%) center/15000% !important;
+				}
+				.controlsButtons:active {
+					background-color: #4682B4;
+					background-size: 100%;
+					transition: background 0s;
+				}
+				#cancel:hover {
+					background: #701313 radial-gradient(circle, transparent 1%, #701313 1%) center/15000% !important;
+				}
+				#cancel:active {
+					background-color: #701313;
+					background-size: 100%;
+					transition: background 0s;
+				}
+			}
+			@media (hover: none) {
+				.menuButtons:focus {
+					background: #4682B4 radial-gradient(circle, transparent 1%, #4682B4 1%) center/15000% !important;
+				}
+				.menuButtons:active {
+					background-color: #4682B4;
+					background-size: 100%;
+					transition: background .1s;
+				}
+				
+				.controlsButtons:focus {
+					background: #4682B4 radial-gradient(circle, transparent 1%, #303030 1%) center/15000% !important;
+				}
+				.controlsButtons:active {
+					background-color: #4682B4;
+					background-size: 100%;
+					transition: background .1s;
+				}
+				#cancel:focus {
+					background: #701313 radial-gradient(circle, transparent 1%, #701313 1%) center/15000% !important;
+				}
+				#cancel:active {
+					background-color: #701313;
+					background-size: 100%;
+					transition: background .1s;
+				}
+			}		
 
 
 		</style>
@@ -249,25 +327,25 @@
 						<div id="drink1Container" class="topRowButtons">
 							<label id="d1Label" for="drink1">
 							</label>
-							<button class="controlsButtons" id="drink1">Drink 1</button>
+							<button type="button" class="controlsButtons" id="drink1">Drink 1</button>
 						</div>
 
 						<div id="drink2Container" class="topRowButtons">
 							<label id="d2Label" for="drink2">
 							</label>
-							<button class="controlsButtons" id="drink2">Drink 2</button>
+							<button type="button" class="controlsButtons" id="drink2">Drink 2</button>
 						</div>
-
+						<div class="break" style="min-height: 30px;"></div>
 
 						<div id="drink3Container" class="topRowButtons">
 							<label id="d3Label" for="drink2">	
 							</label>
-							<button class="controlsButtons" id="drink3">Drink 3</button>
+							<button type="button" class="controlsButtons" id="drink3">Drink 3</button>
 
 						</div>
 						<div class="break" style="min-height: 30px;"></div>
 						<div id="cancelContainer">
-							<button class="controlsButtons" id="cancel">Cancel Pour</button>
+							<button type="button" class="controlsButtons" id="cancel">Cancel Pour</button>
 
 						</div>
 
@@ -297,8 +375,8 @@
 						</div>
 						<div class="break" style="min-height: 40px;"></div>
 						<div id="luButtonContainer">
-							<button class="controlsButtons" id="uButton" onclick="unlocked()">Unlock</button>
-							<button class="controlsButtons" id="lButton" onclick="locked()">Lock</button>
+							<button type="button" class="controlsButtons" id="uButton" onclick="unlocked()">Unlock</button>
+							<button type="button" class="controlsButtons" id="lButton" onclick="locked()">Lock</button>
 						</div>
 					</div>
 					
