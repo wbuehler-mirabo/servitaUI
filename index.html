@@ -246,7 +246,7 @@
 			@media (min-width:1281px) { /* hi-res laptops and desktops */ }
 
 			@media (hover: hover) {
-				.menuButtons:hover {
+				.menuButtons:hover, .menuButtons:focus {
 					background: #4682B4 radial-gradient(circle, transparent 1%, #4682B4 1%) center/15000% !important;
 				}
 				.menuButtons:active {
@@ -255,7 +255,7 @@
 					transition: background 0s;
 				}
 				
-				.controlsButtons:hover {
+				.controlsButtons:hover, .controlsButtons:focus {
 					background: #4682B4 radial-gradient(circle, transparent 1%, #303030 1%) center/15000% !important;
 				}
 				.controlsButtons:active {
@@ -263,7 +263,7 @@
 					background-size: 100%;
 					transition: background 0s;
 				}
-				#cancel:hover {
+				#cancel:hover, #cancel:focus{
 					background: #701313 radial-gradient(circle, transparent 1%, #701313 1%) center/15000% !important;
 				}
 				#cancel:active {
